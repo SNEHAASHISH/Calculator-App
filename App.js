@@ -37,6 +37,14 @@ function App() {
     "+",
   ];
 
+  let showLogData = function() {
+    var log = 0;
+    var string = "";
+    for (var key in historyData) {
+      string += ""+historyData[key]["expression"]+" = "+historyData[key]["result"]+"<br>";
+    }
+  }
+
   let evaluateExpression = function () {
     let evalution = eval(expression);
     setOldExpression(expression + " =");
@@ -44,7 +52,7 @@ function App() {
     setExpression(String(evalution));
     resultData = setExpression;
     historyData.push({"expression":expressionData,"result":resultData});
-    //showLogData();
+    showLogData();
     expressionData = "";
     resultData = "";
     setPrev("ANS");
@@ -88,14 +96,6 @@ function App() {
       evaluateExpression();
     }
   };
-
-  let logData = function showLogData() {
-    var log = 0;
-    var string = "";
-    for (var key in historyData) {
-      string += ""+historyData[key]["expression"]+" = "+historyData[key]["result"]+"<br>";
-    }
-  }
 
   return (
     <div className="App" tabIndex={0} onKeyUp={handleKeyUp}>
