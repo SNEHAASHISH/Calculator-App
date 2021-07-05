@@ -42,15 +42,16 @@ function App() {
     var string = "";
     for (var key in historyData) {
       string += ""+historyData[key]["expression"]+" = "+historyData[key]["result"]+"<br>";
+      console.log(""+historyData[key]["expression"]+" = "+historyData[key]["result"]+"<br>");
     }
   }
 
   let evaluateExpression = function () {
     let evalution = eval(expression);
     setOldExpression(expression + " =");
-    expressionData = setOldExpression;
+    expressionData = oldExpression;
     setExpression(String(evalution));
-    resultData = setExpression;
+    resultData = expression;
     historyData.push({"expression":expressionData,"result":resultData});
     showLogData();
     expressionData = "";
