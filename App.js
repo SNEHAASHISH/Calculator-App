@@ -42,7 +42,7 @@ function App() {
     var string = "";
     for (var key in historyData) {
       string += ""+historyData[key]["expression"]+" = "+historyData[key]["result"]+"<br>";
-      console.log(""+historyData[key]["expression"]+" = "+historyData[key]["result"]+"<br>");
+      console.log(""+historyData[key]["expression"]+" = "+historyData[key]["result"]);
     }
   }
 
