@@ -7,6 +7,18 @@ function App() {
   let [expression, setExpression] = useState("0");
   let [prev, setPrev] = useState("ANS");
   
+  /*const [name, setName] = useState('');
+  const [pwd, setPwd] = useState('');*/
+
+  let handle = () => {
+      localStorage.setItem('Expression', oldExpression);
+      localStorage.setItem('Result', expression);
+  };
+  let remove = () => {
+      localStorage.removeItem('Name');
+      localStorage.removeItem('Password');
+  };
+  
   let historyData = [];
   let expressionData = "";
   let resultData = "";
