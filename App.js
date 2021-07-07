@@ -52,7 +52,9 @@ function App() {
     expressionData = oldExpression;
     setExpression(String(evalution));
     resultData = expression;
-    historyData.push({"expression":expressionData,"result":resultData});
+    console.log(evalution);
+    console.log(resultData+"\n");
+    historyData.push({"expression":resultData,"result":evalution});
     showLogData();
     expressionData = "";
     resultData = "";
