@@ -15,10 +15,10 @@ function App() {
       localStorage.setItem('Result', expression);
   };
   let remove = () => {
-      localStorage.removeItem('Name');
-      localStorage.removeItem('Password');
+      localStorage.removeItem('Expression');
+      localStorage.removeItem('Result');
   };
-  
+
   let historyData = [];
   let expressionData = "";
   let resultData = "";
